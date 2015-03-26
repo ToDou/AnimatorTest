@@ -23,7 +23,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.main_activity_interpolator:
-                startActivity(new Intent(this, IntepolatorActivity.class));
+                startActivity(new Intent(this, InterpolatorActivity.class));
         }
     }
 }

@@ -17,7 +17,7 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".IntepolatorActivity"
+        <activity android:name=".InterpolatorActivity"
             android:launchMode="singleTop"
             />
     </application>

@@ -21,7 +21,7 @@ import com.nineoldandroids.animation.ObjectAnimator;
 /**
  * Created by tudou on 15-3-26.
  */
-public class IntepolatorActivity extends BaseActivity {
+public class InterpolatorActivity extends BaseActivity {
 
     private Spinner mSpinner;
     private ImageView mTextView;
@@ -34,7 +34,7 @@ public class IntepolatorActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_interpolator);
 
         mSpinner = (Spinner) this.findViewById(R.id.main_spinner);
         mTextView = (ImageView) this.findViewById(R.id.main_text);
@@ -42,7 +42,7 @@ public class IntepolatorActivity extends BaseActivity {
     }
 
     private void intSpinner() {
-        mSpinner.setAdapter(new ArrayAdapter<>(IntepolatorActivity.this, android.R.layout.simple_list_item_1, interpolatorName));
+        mSpinner.setAdapter(new ArrayAdapter<>(InterpolatorActivity.this, android.R.layout.simple_list_item_1, interpolatorName));
         mSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
