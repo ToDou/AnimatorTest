@@ -6,24 +6,25 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity implements View.OnClickListener{
+import butterknife.ButterKnife;
+import butterknife.InjectView;
+import butterknife.OnClick;
 
-    private Button mButtonInterpolator;
-    private Button mButtonLinearMenu;
+public class MainActivity extends ActionBarActivity{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_layout);
-
-        mButtonInterpolator = (Button) findViewById(R.id.main_activity_interpolator);
-        mButtonInterpolator.setOnClickListener(this);
-
-        mButtonLinearMenu = (Button) findViewById(R.id.main_activity_linear_menu);
-        mButtonLinearMenu.setOnClickListener(this);
+        ButterKnife.inject(this);
     }
 
-    @Override
+    @OnClick({
+            R.id.main_activity_interpolator,
+            R.id.main_activity_linear_menu,
+            R.id.main_activity_value_animator
+    })
+    @SuppressWarnings("unused")
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.main_activity_interpolator:
@@ -31,6 +32,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
                 break;
             case R.id.main_activity_linear_menu:
                 startActivity(new Intent(this, LinearMenuAnimatorTest.class));
+                break;
+            case R.id.main_activity_value_animator:
+                startActivity(new Intent(this, ValueAnimatorTest.class));
                 break;
         }
     }

@@ -24,6 +24,9 @@
         <activity android:name=".LinearMenuAnimatorTest"
             android:launchMode="singleTop"
             />
+        <activity android:name=".ValueAnimatorTest"
+            android:launchMode="singleTop"
+            />
     </application>
 
 </manifest>
