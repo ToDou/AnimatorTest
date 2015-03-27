@@ -12,6 +12,17 @@ import butterknife.OnClick;
 
 public class MainActivity extends ActionBarActivity{
 
+    /*
+    alpha
+    rotation
+    translationX
+    translationY
+    scaleX 缩放宽度
+    scaleY  缩放高度
+    pivotX 旋转的轴点和缩放的基准点
+    pivotY 旋转的轴点和缩放的基准点
+     */
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -22,7 +33,8 @@ public class MainActivity extends ActionBarActivity{
     @OnClick({
             R.id.main_activity_interpolator,
             R.id.main_activity_linear_menu,
-            R.id.main_activity_value_animator
+            R.id.main_activity_value_animator,
+            R.id.main_activity_edittext_animator
     })
     @SuppressWarnings("unused")
     public void onClick(View v) {
@@ -35,6 +47,9 @@ public class MainActivity extends ActionBarActivity{
                 break;
             case R.id.main_activity_value_animator:
                 startActivity(new Intent(this, ValueAnimatorTest.class));
+                break;
+            case R.id.main_activity_edittext_animator:
+                startActivity(new Intent(this, EditTextAnimatorTest.class));
                 break;
         }
     }

@@ -42,5 +42,13 @@
         android:text="value animator"
         />
 
+    <Button
+        android:id="@+id/main_activity_edittext_animator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:text="edit text animator"
+        />
 
 </LinearLayout>
