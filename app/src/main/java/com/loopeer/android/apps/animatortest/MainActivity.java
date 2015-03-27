@@ -9,6 +9,7 @@ import android.widget.Button;
 public class MainActivity extends ActionBarActivity implements View.OnClickListener{
 
     private Button mButtonInterpolator;
+    private Button mButtonLinearMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +18,9 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
 
         mButtonInterpolator = (Button) findViewById(R.id.main_activity_interpolator);
         mButtonInterpolator.setOnClickListener(this);
+
+        mButtonLinearMenu = (Button) findViewById(R.id.main_activity_linear_menu);
+        mButtonLinearMenu.setOnClickListener(this);
     }
 
     @Override
@@ -24,6 +28,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (v.getId()) {
             case R.id.main_activity_interpolator:
                 startActivity(new Intent(this, InterpolatorActivity.class));
+                break;
+            case R.id.main_activity_linear_menu:
+                startActivity(new Intent(this, LinearMenuAnimatorTest.class));
+                break;
         }
     }
 }

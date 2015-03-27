@@ -38,7 +38,12 @@ public class InterpolatorActivity extends BaseActivity {
 
         mSpinner = (Spinner) this.findViewById(R.id.main_spinner);
         mTextView = (ImageView) this.findViewById(R.id.main_text);
-        intSpinner();
+        new android.os.Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                intSpinner();
+            }
+        });
     }
 
     private void intSpinner() {
@@ -57,8 +62,8 @@ public class InterpolatorActivity extends BaseActivity {
     }
 
     private void addAnimator(int position) {
-        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mTextView, "X", 300F);
-        objectAnimator.setDuration(2000);
+        ObjectAnimator objectAnimator = ObjectAnimator.ofFloat(mTextView, "X", 20, InterpolatorActivity.this.getResources().getDisplayMetrics().widthPixels * 3 / 5);
+        objectAnimator.setDuration(1500);
         objectAnimator.setInterpolator(interpolators[position]);
         objectAnimator.setRepeatCount(ValueAnimator.INFINITE);
         objectAnimator.setRepeatMode(com.nineoldandroids.animation.ValueAnimator.RESTART);
